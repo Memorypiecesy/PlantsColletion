@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="NoteVo"
+            type="com.example.plantscolllection.bean.NoteVo" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:background="@color/RGB_245_245_245">
+
+        <!--        &lt;!&ndash;    最近编辑时间的Relative&ndash;&gt;-->
+        <!--        <RelativeLayout-->
+        <!--            android:layout_width="328dp"-->
+        <!--            android:layout_height="19dp"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:layout_marginTop="16dp">-->
+
+        <!--            &lt;!&ndash;                    "最近编辑于"TextView左边的圆圈&ndash;&gt;-->
+        <!--            <ImageView-->
+        <!--                android:layout_centerVertical="true"-->
+        <!--                android:layout_width="4dp"-->
+        <!--                android:layout_height="4dp"-->
+        <!--                android:src="@drawable/plants_detail_circle" />-->
+
+        <!--            &lt;!&ndash;    "最近编辑于"TextView&ndash;&gt;-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="10dp"-->
+        <!--                android:text="@string/latest_edit"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="13sp" />-->
+        <!--            &lt;!&ndash;    "最近编辑时间"TextView&ndash;&gt;-->
+        <!--            <TextView-->
+        <!--                android:id="@+id/latest_edit_text"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="82dp"-->
+        <!--                tools:text="15:19"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="13sp" />-->
+
+
+        <!--        </RelativeLayout>-->
+        <!--    每个item的根布局布局-->
+        <com.example.plantscolllection.utils.SlideMenuLayout
+            android:id="@+id/item_note_slide"
+            android:layout_width="328dp"
+            android:layout_height="104dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            app:content_id="@+id/ll_layout"
+            app:right_id="@+id/ll_right_menu">
+
+            <LinearLayout
+                android:id="@+id/circle_linear"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="-30dp">
+
+            <ImageView
+                android:id="@+id/circle_image"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_gravity="center"
+                android:src="@drawable/not_selected_circle" />
+
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/item_note_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="328dp"
+                    android:layout_height="104dp"
+
+                    android:background="@color/white">
+
+                    <!--        时间-->
+                    <TextView
+                        android:id="@+id/title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="106dp"
+                        android:layout_marginTop="12dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{NoteVo.title}"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:text="笔记1" />
+
+                    <!--    花的图片-->
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/picture"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher_background"
+                        app:round="10dp" />
+
+                    <!--        时间-->
+                    <TextView
+                        android:id="@+id/time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="106dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="13dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textColor="@color/RGB_204_204_204"
+                        android:textSize="16sp"
+                        tools:text="11月19日" />
+                    <!--        植物的中文名-->
+                    <TextView
+                        android:id="@+id/plants_chinese_name"
+                        android:layout_width="205dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="106dp"
+                        android:layout_marginTop="50dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{NoteVo.name}"
+                        android:textColor="@color/RGB_204_204_204"
+                        android:textSize="16sp"
+                        tools:text="茉莉花" />
+
+                    <!--        植物的拉丁名-->
+                    <TextView
+                        android:id="@+id/plants_latin_name"
+                        android:layout_width="205dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/plants_chinese_name"
+                        android:layout_marginStart="106dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{NoteVo.latinName}"
+                        android:textColor="@color/RGB_204_204_204"
+                        android:textSize="14sp"
+                        tools:text="Jasminum sambac" />
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/ll_right_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/ll_layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/delete_text"
+                    android:layout_width="56dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/item_delete_button_round_corner"
+                    android:gravity="center"
+                    android:text="删除"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </com.example.plantscolllection.utils.SlideMenuLayout>
+
+    </RelativeLayout>
+</layout>
+

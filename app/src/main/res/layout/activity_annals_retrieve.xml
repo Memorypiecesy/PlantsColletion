@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.RetrieveResultActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+            <!--    返回键-->
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/back" />
+            <!--    "植物百科"文字-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="14dp"
+                android:text="@string/annals_retrieve"
+                android:textColor="@color/RGB_0_0_0"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+<!--            中国植物志icon-->
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="111dp"
+                android:src="@drawable/chinese_plants_annals" />
+
+            <!--    搜索框-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="328dp"
+                android:layout_height="47dp"
+                android:layout_centerHorizontal="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="30dp"
+                android:layout_marginTop="170dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/RGB_76_219_154"
+                app:strokeWidth="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--    搜索框中的EditText-->
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/annals_retrieve_page_edit"
+                        android:layout_width="296dp"
+                        android:layout_height="23dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="40dp"
+                        android:background="@color/white"
+                        android:ellipsize="end"
+                        android:hint="检索中文名、学名、别名"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/RGB_153_153_153"
+                        android:textSize="16sp" />
+
+<!--                    &lt;!&ndash;            "清空"图标&ndash;&gt;-->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/search_page_image_clear"-->
+<!--                        android:layout_width="21dp"-->
+<!--                        android:layout_height="21dp"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_marginEnd="8dp"-->
+<!--                        android:src="@drawable/search_page_clear"-->
+<!--                        android:visibility="invisible" />-->
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--    开始检索-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/start_retrieve_card"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                app:cardBackgroundColor="@color/RGB_76_219_154"
+                app:cardCornerRadius="30dp"
+                android:layout_marginTop="310dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--    搜索框中的EditText-->
+                    <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/note_page_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/start_retrieve"
+                        android:textSize="16sp" />
+
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+</layout>

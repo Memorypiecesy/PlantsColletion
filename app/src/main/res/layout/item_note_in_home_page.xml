@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="NoteVo"
+            type="com.example.plantscolllection.bean.NoteVo" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:background="@color/white">
+
+        <!--                    "发现植物时间"TextView左边的圆圈-->
+        <ImageView
+            android:id="@+id/green_circle"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/plants_detail_circle" />
+        <!--                    圆圈下边的那条线-->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="113dp"
+            android:layout_below="@+id/green_circle"
+            android:layout_marginStart="19dp"
+            android:background="@color/RGB_76_219_154" />
+
+
+        <!--    发现植物时间和地点的Relative-->
+        <RelativeLayout
+            android:id="@+id/spot_plants_time_and_place_relative"
+            android:layout_width="317dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="16dp">
+
+            <!--    "发现植物时间"TextView-->
+            <TextView
+                android:id="@+id/spot_plants_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:text="昨天 15:19" />
+            <!--    "在某地发现某植物"的TextView-->
+            <TextView
+                android:id="@+id/spot_plants_place_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@+id/spot_plants_time_text"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:text="在广东海洋大学蝴蝶湖发现了茉莉花" />
+
+
+        </RelativeLayout>
+
+        <!--    每个item的根布局布局-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_below="@+id/spot_plants_time_and_place_relative"
+            android:id="@+id/item_note_card"
+            android:layout_width="314dp"
+            android:layout_height="104dp"
+            android:layout_marginStart="29dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <!--        时间-->
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="106dp"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{NoteVo.title}"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    tools:text="笔记1" />
+
+                <!--    花的图片-->
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:scaleType="fitXY"
+                    android:id="@+id/picture"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:round="10dp" />
+
+                <!--        时间-->
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="106dp"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp"
+                    tools:text="11月19日" />
+                <!--        植物的中文名-->
+                <TextView
+                    android:id="@+id/plants_chinese_name"
+                    android:layout_width="205dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="106dp"
+                    android:layout_marginTop="50dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{NoteVo.name}"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp"
+                    tools:text="茉莉花" />
+
+                <!--        植物的拉丁名-->
+                <TextView
+                    android:id="@+id/plants_latin_name"
+                    android:layout_width="205dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/plants_chinese_name"
+                    android:layout_marginStart="106dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{NoteVo.latinName}"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="14sp"
+                    tools:text="Jasminum sambac" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <View
+            android:layout_below="@+id/item_note_card"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"/>
+
+    </RelativeLayout>
+</layout>
+

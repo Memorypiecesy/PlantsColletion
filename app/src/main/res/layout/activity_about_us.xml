@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp">
+
+                <!--    返回键-->
+                <ImageView
+                    android:id="@+id/back_image"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/back" />
+                <!--    "意见反馈"文字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/about_us"
+                    android:textColor="@color/RGB_0_0_0"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+            <!--        logo、版本的根布局-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="264dp">
+
+                <!--    logo-->
+                <ImageView
+                    android:layout_width="93dp"
+                    android:layout_height="93dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="44dp"
+                    android:src="@drawable/about_us_logo_image" />
+
+                <!--    "花草集"文字-->
+                <ImageView
+                    android:layout_width="74dp"
+                    android:layout_height="26dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="167dp"
+                    android:src="@drawable/about_us_app_name" />
+
+                <!--    "Version"文字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="139dp"
+                    android:layout_marginTop="198dp"
+                    android:text="@string/version"
+                    android:textColor="@color/RGB_51_51_51"
+                    android:textSize="16sp" />
+
+                <!--    "具体Version"文字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="198dp"
+                    android:layout_marginTop="198dp"
+                    android:text="1.0"
+                    android:textColor="@color/RGB_51_51_51"
+                    android:textSize="16sp"
+                    tools:text="1.0" />
+
+            </RelativeLayout>
+
+            <!--    "功能介绍"的RelativeLayout布局-->
+            <RelativeLayout
+                android:id="@+id/function_intro_relative"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <!--    "功能介绍"TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/function_intro"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <!--        "功能介绍"处的箭头ImageView-->
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="22dp"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <!--    "检查新版本"的RelativeLayout布局-->
+            <RelativeLayout
+                android:id="@+id/check_new_version_relative"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <!--    "检查新版本"TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/check_new_version"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <!--        "检查新版本"处的箭头ImageView-->
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="22dp"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <!--    "当前已是最新版本"CardView-->
+        <com.google.android.material.card.MaterialCardView
+            android:visibility="invisible"
+            android:layout_marginTop="471dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/already_latest_version_card"
+            android:layout_width="188dp"
+            android:layout_height="53dp"
+            app:cardBackgroundColor="@color/RGB_56_56_56"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/search_box_relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!--        当前已是最新版本TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/already_latest_version"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</layout>

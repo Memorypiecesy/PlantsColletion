@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/RGB_245_245_245"
+        tools:context=".view.SearchResultFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_result_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--        "查找不到该结果"图片-->
+        <ImageView
+            android:id="@+id/find_no_picture"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="98dp"
+            android:layout_width="286dp"
+            android:layout_height="201dp"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/find_no_page" />
+
+    </RelativeLayout>
+</layout>

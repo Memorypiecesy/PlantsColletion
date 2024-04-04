@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="User"
+            type="com.example.plantscolllection.bean.User" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.InfoSettingActivity">
+        <!--    返回键-->
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/back" />
+        <!--    "资料设置"文字-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="@string/info_setting"
+            android:textColor="@color/RGB_0_0_0"
+            android:textSize="17sp" />
+
+        <!--    头像-->
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/info_setting_page_avatar"
+            android:layout_width="93dp"
+            android:layout_height="93dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="119dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/qq_icon"
+            app:roundPercent="1" />
+        <!--    "用户昵称"文字-->
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="222dp"
+            android:text="@string/user_name"
+            android:textColor="@color/RGB_77_77_77"
+            android:textSize="17sp" />
+        <!--    "用户昵称"EditText-->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/user_name_edit"
+            android:layout_width="275dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="265dp"
+            android:background="@color/white"
+            android:maxLength="12"
+            android:text="@{User.name}"
+            android:textSize="17sp"
+            tools:text="热爱自然的小白" />
+
+        <!--    "用户昵称"字数限制-->
+        <TextView
+            android:id="@+id/user_name_length_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="266dp"
+            android:layout_marginEnd="16dp"
+            android:text="0/12"
+            android:textColor="@color/RGB_76_219_154"
+            android:textSize="16sp" />
+
+        <!--    "用户简介"文字-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="328dp"
+            android:text="@string/user_brief"
+            android:textColor="@color/RGB_77_77_77"
+            android:textSize="17sp" />
+        <!--    "用户简介"的CardView-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="328dp"
+            android:layout_height="96dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="366dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:strokeColor="@color/RGB_76_219_154"
+            app:strokeWidth="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--    "用户简介"EditText-->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/user_brief_edit"
+                    android:layout_width="312dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    android:maxLength="24"
+                    android:text="@{User.self}"
+                    tools:text="热爱自然的小白" />
+
+                <!--    "用户简介"字数限制-->
+                <TextView
+                    android:id="@+id/user_brief_length_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="0/24"
+                    android:textColor="@color/RGB_76_219_154"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--    "完成设置"的CardView-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/complete_setting_card"
+            android:layout_width="261dp"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="49dp"
+            android:backgroundTint="@color/RGB_76_219_154"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!--    "完成设置"TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/setting_complete"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+</layout>

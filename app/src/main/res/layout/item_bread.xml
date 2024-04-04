@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp">
+
+
+
+        <TextView
+            android:text="泽菊属"
+            android:textSize="16sp"
+            android:textColor="@color/RGB_76_219_154"
+            android:id="@+id/bread_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/bread_image"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/bread_text"
+            android:src="@drawable/right_arrow_for_bread_grey"
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+
+    </RelativeLayout>
+</layout>

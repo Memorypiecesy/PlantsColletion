@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".view.HistoryAndHotFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!--        "历史记录"文字-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="18dp"
+                            android:text="@string/history"
+                            android:textColor="@color/RGB_51_51_51"
+                            android:textSize="16sp" />
+
+                        <!--        删除按钮-->
+                        <ImageView
+                            android:id="@+id/delete_image"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="19dp"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/delete" />
+
+                    </RelativeLayout>
+
+
+                    <!--                    历史记录RecyclerView-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/history_record_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp" />
+
+                    <!--            热门搜索文字和图标的布局-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!--        "热门搜索"文字-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="42dp"
+                            android:text="@string/hot_search"
+                            android:textColor="@color/RGB_51_51_51"
+                            android:textSize="16sp" />
+
+                        <!--        "热门搜索"icon-->
+                        <ImageView
+                            android:layout_width="17dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="1dp"
+                            android:src="@drawable/hot_search" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/hot_botany_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.SearchActivity">
+
+        <!--    搜索框-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/search_page_search_card_view"
+            android:layout_width="281dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/RGB_76_219_154"
+            app:strokeWidth="2dp">
+
+            <RelativeLayout
+                android:id="@+id/search_box_relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--    搜索框中的EditText-->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/search_page_edit"
+                    android:layout_width="212dp"
+                    android:layout_height="23dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="40dp"
+                    android:background="@color/white"
+                    android:ellipsize="end"
+                    android:hint="搜索植物名称"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/RGB_153_153_153"
+                    android:textSize="16sp" />
+
+                <!--    放大镜的图片-->
+                <ImageView
+                    android:id="@+id/search_page_magnifying_lens"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="13dp"
+                    android:background="@drawable/magnifying_lens_gery" />
+                <!--            "清空"图标-->
+                <ImageView
+                    android:id="@+id/search_page_image_clear"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/search_page_clear"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--        "取消"文字-->
+        <TextView
+            android:id="@+id/search_page_cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/cancel"
+            android:textColor="@color/RGB_76_219_154"
+            android:textSize="18sp" />
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/search_page_fragment_container"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/search_page_search_card_view"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation_search" />
+
+        <!--                文字扩展RecyclerView-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/search_page_search_card_view"
+            android:id="@+id/text_expand_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+</layout>

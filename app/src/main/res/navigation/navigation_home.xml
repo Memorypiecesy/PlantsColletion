@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home_page">
+
+    <fragment
+        android:id="@+id/home_page"
+        android:name="com.example.plantscolllection.view.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+    <fragment
+        android:id="@+id/note_page"
+        android:name="com.example.plantscolllection.view.MyNoteFragment"
+        android:label="fragment_encyclopedia"
+        tools:layout="@layout/fragment_my_note" />
+    <fragment
+        android:id="@+id/nearby_page"
+        android:name="com.example.plantscolllection.view.NearByFragment"
+        android:label="fragment_near_by"
+        tools:layout="@layout/fragment_near_by" />
+    <fragment
+        android:id="@+id/me_page"
+        android:name="com.example.plantscolllection.view.MeFragment"
+        android:label="fragment_me"
+        tools:layout="@layout/fragment_me" />
+
+</navigation>

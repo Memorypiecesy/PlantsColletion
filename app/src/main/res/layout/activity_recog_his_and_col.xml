@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.RecogHisAndColActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            tools:listitem="@layout/item"
+            android:id="@+id/recognition_history_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/retrieve_by_door_root"
+            android:background="@color/RGB_245_245_245" />
+
+        <!--要是不写这个LinearLayout布局，平移效果将会在父窗体进行-->
+        <LinearLayout
+            android:layout_below="@id/retrieve_by_door_root"
+            android:clipChildren="true"
+            android:clipToPadding="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/retrieve_by_door_linear"
+            android:layout_width="match_parent"
+            android:layout_height="273dp"
+            android:background="@drawable/door_child_layout_corner"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/phycophyta_relative"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/phycophyta_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="藻类植物门"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="314dp"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/RGB_204_204_204" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lichens_relative"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lichens_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="地衣植物门"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="314dp"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/RGB_204_204_204" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bryophyta_relative"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bryophyta_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="苔藓植物门"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="314dp"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/RGB_204_204_204" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fern_relative"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fern_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="蕨类植物门"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="314dp"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/RGB_204_204_204" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/gymnosperm_relative"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gymnosperm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="裸子植物门"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="314dp"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/RGB_204_204_204" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/angiosperm_relative"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/angiosperm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="被子植物门"
+                    android:textColor="@color/RGB_204_204_204"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+        <!--    返回键-->
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/back" />
+        <!--    最上面的文字-->
+        <TextView
+            android:id="@+id/text_above"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="@string/recognition_history"
+            android:textColor="@color/RGB_0_0_0"
+            android:textSize="17sp" />
+
+        <!--    "按门类检索"的根布局-->
+        <RelativeLayout
+            android:id="@+id/retrieve_by_door_root"
+            android:layout_marginTop="54dp"
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+            <!--        "按门类检索"可点击范围-->
+            <RelativeLayout
+                android:id="@+id/retrieve_by_door_click_area"
+                android:layout_centerInParent="true"
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+                <!--            "按门类检索"文字-->
+                <TextView
+                    android:id="@+id/retrieve_by_door_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="36dp"
+                    android:text="@string/retrieve_by_division"
+                    android:textColor="@color/RGB_153_153_153"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/retrieve_by_door_image"
+                    android:layout_marginEnd="39dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/more_grey"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

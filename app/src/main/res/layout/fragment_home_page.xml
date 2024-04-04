@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        android:background="@color/white"
+        tools:context=".view.HomePageFragment">
+        <!--        背景-->
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="306dp"
+            android:src="@drawable/home_page_sun_background" />
+
+        <!--        定位icon-->
+        <ImageView
+            android:layout_marginTop="38dp"
+            android:layout_marginStart="7dp"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:src="@drawable/home_page_location" />
+
+        <!--        地区文字-->
+        <TextView
+            android:id="@+id/region_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="37dp"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            tools:text="麻章区" />
+
+        <!--    搜索框-->
+        <com.google.android.material.card.MaterialCardView
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/home_page_search_card_view"
+            android:layout_width="206dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="37dp"
+            android:layout_alignParentEnd="true"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp">
+
+            <RelativeLayout
+                android:id="@+id/search_box_relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--    搜索框中的EditText-->
+                <TextView
+                    android:layout_width="148dp"
+                    android:layout_height="23dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="40dp"
+                    android:background="@android:color/transparent"
+                    android:text="搜索植物名称"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <!--    放大镜的图片-->
+                <ImageView
+                    android:id="@+id/search_page_magnifying_lens"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="13dp"
+                    android:background="@drawable/magnifying_lens_white" />
+                <!--            "清空"图标-->
+                <ImageView
+                    android:id="@+id/search_page_image_clear"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/search_page_clear"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--        天气icon-->
+        <ImageView
+            android:id="@+id/weather_image"
+            android:layout_width="163dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="88dp"
+            android:scaleType="fitXY" />
+
+        <!--        温度文字-->
+        <TextView
+            android:id="@+id/temperature_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="98dp"
+            android:textColor="@color/white"
+            android:textSize="66sp"
+            tools:text="27°C" />
+
+        <!--        天气状况描述文字-->
+        <TextView
+            android:id="@+id/weather_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="187dp"
+            android:layout_marginEnd="100dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:text="多云转晴" />
+
+        <!--        星期和日期描述文字-->
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="219dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            tools:text="星期二，10/22" />
+
+<!--        圆角矩形Relative-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/home_page_round_corner">
+
+            <!--        分类检索图标-->
+            <ImageView
+                android:id="@+id/classification_retrieve_image"
+                android:layout_width="60dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/classification_retrieve" />
+
+            <!--        分类检索文字-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/classification_retrieve_image"
+                android:layout_marginStart="36dp"
+                android:text="@string/classification_retrieve"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <!--        标本检索图标-->
+            <ImageView
+                android:id="@+id/specimen_retrieve_image"
+                android:layout_width="60dp"
+                android:layout_height="73dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/specimen_retrieve" />
+
+            <!--        标本检索文字-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/specimen_retrieve_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="36dp"
+                android:text="@string/specimen_retrieve"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <!--        志书检索图标-->
+            <ImageView
+                android:id="@+id/annals_retrieve_image"
+                android:layout_width="60dp"
+                android:layout_height="73dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="36dp"
+                android:src="@drawable/annals_retrieve" />
+
+            <!--        志书检索文字-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/annals_retrieve_image"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:text="@string/annals_retrieve"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <!--        "我的足迹"文字-->
+            <TextView
+                android:id="@+id/my_foot_print_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/classification_retrieve_image"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="65dp"
+                android:text="@string/my_foot_print"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!--        我的足迹图标-->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="94dp"
+                android:layout_marginTop="170dp"
+                android:src="@drawable/home_page_foot_print" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_page_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/my_foot_print_text"
+                android:layout_marginBottom="50dp"
+                android:background="@color/white" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

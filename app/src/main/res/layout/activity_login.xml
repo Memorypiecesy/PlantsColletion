@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.LoginActivity">
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--手机号码TextView-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="187dp"
+                android:text="136****2885"
+                android:textColor="@color/RGB_0_0_0"
+                android:textSize="36sp" />
+
+            <!--    "本机号码一键登录"的CardView-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/this_phone_number_cardView"
+                android:layout_width="296dp"
+                android:layout_height="46dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="356dp"
+                app:cardBackgroundColor="@color/RGB_76_219_154"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="0dp">
+
+                <!--    本机号码一键登录的RelativeLayout-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <!--        "本机号码一键登录"TextView-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="本机号码一键登录"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+<!--            &lt;!&ndash;    "使用其他号码登录"的CardView&ndash;&gt;-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                app:strokeWidth="2dp"-->
+<!--                app:strokeColor="@color/RGB_76_219_154"-->
+<!--                android:id="@+id/other_phone_number_cardView"-->
+<!--                android:layout_width="296dp"-->
+<!--                android:layout_height="46dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="353dp"-->
+<!--                app:cardBackgroundColor="@color/white"-->
+<!--                app:cardCornerRadius="50dp"-->
+<!--                app:cardElevation="0dp">-->
+
+<!--                &lt;!&ndash;    "使用其他号码登录"的RelativeLayout&ndash;&gt;-->
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent">-->
+<!--                    &lt;!&ndash;        "使用其他号码登录"TextView&ndash;&gt;-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:text="使用其他号码登录"-->
+<!--                        android:textColor="@color/RGB_76_219_154"-->
+<!--                        android:textSize="18sp" />-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+            <!--勾选同意条款的圈圈ImageView-->
+            <ImageView
+                android:id="@+id/login_circle"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="430dp"
+                android:src="@drawable/login_circle" />
+
+            <!--        我已阅读并同意《服务条款》和《隐私协议》-->
+            <TextView
+                android:id="@+id/login_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="429dp"
+                android:text="@string/start_page_protocol"
+                android:textSize="12sp" />
+
+            <!--微信图标-->
+            <ImageView
+                android:layout_marginStart="229dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginBottom="29dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/wechat" />
+
+            <!--        "第三方登录"文字-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="93dp"
+                android:text="@string/start_page_third_part_login" />
+            <!--        "第三方登录"左边的分割线-->
+            <View
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="105dp"
+                android:layout_marginStart="52dp"
+                android:background="@color/RGB_166_166_166"
+                android:layout_width="73dp"
+                android:layout_height="1dp" />
+            <!--        "第三方登录"右边的分割线-->
+            <View
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="105dp"
+                android:layout_marginStart="234dp"
+                android:background="@color/RGB_166_166_166"
+                android:layout_width="73dp"
+                android:layout_height="1dp" />
+
+            <!--QQ图标-->
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="95dp"
+                android:layout_marginBottom="29dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/qq_icon" />
+
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

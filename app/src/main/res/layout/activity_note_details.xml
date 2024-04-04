@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="PlantsDetails"
+            type="com.example.plantscolllection.bean.PlantsDetails" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!--    最上面的Relative-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+            <!--    返回键-->
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="17dp"
+                android:src="@drawable/back" />
+
+
+            <!--    "笔记"文字-->
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/note_title_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:background="@color/white"
+                android:text="@string/menu_note"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <!--    "保存"文字-->
+            <TextView
+                android:id="@+id/save_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="25dp"
+                android:text="@string/save"
+                android:textColor="@color/RGB_76_219_154"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/below_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="128dp">
+
+
+                            <!--                植物的图片-->
+                            <androidx.constraintlayout.utils.widget.ImageFilterView
+                                android:scaleType="fitXY"
+                                android:id="@+id/plants_image"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="16dp"
+                                android:src="@drawable/ic_launcher_background"
+                                app:round="10dp" />
+
+
+                            <!--                    中文名-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/plants_chinese_name"
+                                android:layout_width="135dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="115dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@color/white"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:text="@{PlantsDetails.name}"
+                                android:textColor="@color/black"
+                                android:textSize="21sp"
+                                tools:text="南美蟛蜞菊" />
+                            <!--                    拉丁名-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/plants_latin_name"
+                                android:layout_width="190dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/plants_chinese_name"
+                                android:layout_marginStart="115dp"
+                                android:background="@color/white"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:text="@{PlantsDetails.latinName}"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                tools:text="Sphagneticola calendulacea " />
+
+                            <!--    右上角"物种类型"的CardView-->
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/species_card_view"
+                                android:layout_width="66dp"
+                                android:layout_height="21dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="16dp"
+                                app:cardBackgroundColor="@color/RGB_76_219_154"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+
+                                    <!--    "物种类型"TextView-->
+                                    <TextView
+                                        android:id="@+id/species_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        tools:text="珍稀物种" />
+
+                                </RelativeLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                            <!--                    "别名"-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/plants_latin_name"
+                                android:layout_marginStart="115dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/alias"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="10sp" />
+
+                            <!--                    "别名详情"-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/alias"
+                                android:layout_width="195dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/plants_latin_name"
+                                android:layout_marginStart="145dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/white"
+                                android:text="@{PlantsDetails.alias}"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="9sp"
+                                tools:text="路边菊、马兰草、蟛蜞花、水兰、卤地菊、黄花龙舌草、黄花曲草、鹿舌草、黄花墨菜、龙舌草。" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.1dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@color/RGB_240_240_240" />
+
+                        <!--            植物门、科等信息的布局-->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp">
+                            <!--                    "门"字左边的圆圈-->
+                            <ImageView
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="27dp"
+                                android:src="@drawable/plants_detail_circle" />
+
+                            <!--                    "门"字-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="28dp"
+                                android:layout_marginTop="18dp"
+                                android:text="@string/door"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="14sp"
+                                tools:text="门" />
+                            <!--                    具体门类-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:background="@color/white"
+                                android:id="@+id/door_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="62dp"
+                                android:layout_marginTop="18dp"
+                                android:text="@{PlantsDetails.door}"
+                                android:textColor="@color/RGB_56_56_56"
+                                android:textSize="14sp"
+                                tools:text="被子植物门" />
+
+
+                            <!--                    "科"字左边的圆圈-->
+                            <ImageView
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_marginStart="180dp"
+                                android:layout_marginTop="27dp"
+                                android:src="@drawable/plants_detail_circle" />
+
+                            <!--                    "科"字-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="192dp"
+                                android:layout_marginTop="18dp"
+                                android:text="@string/family"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="14sp"
+                                tools:text="科" />
+
+                            <!--                    具体科类-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:background="@color/white"
+                                android:id="@+id/family_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="226dp"
+                                android:layout_marginTop="18dp"
+                                android:text="@{PlantsDetails.family}"
+                                android:textColor="@color/RGB_56_56_56"
+                                android:textSize="14sp"
+                                tools:text="菊科" />
+
+                            <!--                    "纲"字左边的圆圈-->
+                            <ImageView
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="58dp"
+                                android:src="@drawable/plants_detail_circle" />
+
+                            <!--                    "纲"字-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="28dp"
+                                android:layout_marginTop="49dp"
+                                android:text="@string/class_name"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="14sp"
+                                tools:text="纲" />
+                            <!--                    具体纲类-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:background="@color/white"
+                                android:id="@+id/class_name_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="62dp"
+                                android:layout_marginTop="49dp"
+                                android:text="@{PlantsDetails.className}"
+                                android:textColor="@color/RGB_56_56_56"
+                                android:textSize="14sp"
+                                tools:text="双子叶植物纲" />
+
+                            <!--                    "属"字左边的圆圈-->
+                            <ImageView
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_marginStart="180dp"
+                                android:layout_marginTop="58dp"
+                                android:src="@drawable/plants_detail_circle" />
+
+                            <!--                    "属"字-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="192dp"
+                                android:layout_marginTop="49dp"
+                                android:text="@string/category"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="14sp"
+                                tools:text="属" />
+
+                            <!--                    具体属类-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/category_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="226dp"
+                                android:layout_marginTop="49dp"
+                                android:background="@color/white"
+                                android:text="@{PlantsDetails.category}"
+                                android:textColor="@color/RGB_56_56_56"
+                                android:textSize="14sp"
+                                tools:text="泽菊属" />
+
+                            <!--                    "目"字左边的圆圈-->
+                            <ImageView
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="89dp"
+                                android:src="@drawable/plants_detail_circle" />
+
+                            <!--                    "目"字-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="28dp"
+                                android:layout_marginTop="80dp"
+                                android:text="@string/class_name"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="14sp"
+                                tools:text="目" />
+                            <!--                    具体目类-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/eye_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="62dp"
+                                android:layout_marginTop="80dp"
+                                android:background="@color/white"
+                                android:text="@{PlantsDetails.eye}"
+                                android:textColor="@color/RGB_56_56_56"
+                                android:textSize="14sp"
+                                tools:text="桔梗目" />
+
+
+                            <!--                    "种"字左边的圆圈-->
+                            <ImageView
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_marginStart="180dp"
+                                android:layout_marginTop="89dp"
+                                android:src="@drawable/plants_detail_circle" />
+
+                            <!--                    "种"字-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="192dp"
+                                android:layout_marginTop="80dp"
+                                android:text="@string/seed"
+                                android:textColor="@color/RGB_128_128_128"
+                                android:textSize="14sp"
+                                tools:text="种" />
+
+                            <!--                    具体种类-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:background="@color/white"
+                                android:id="@+id/seed_edit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="226dp"
+                                android:layout_marginTop="80dp"
+                                android:text="@{PlantsDetails.seed}"
+                                android:textColor="@color/RGB_56_56_56"
+                                android:textSize="14sp"
+                                tools:text="南美蟛蜞菊" />
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:background="@color/RGB_240_240_240" />
+
+                        <!--            观测时间的布局-->
+
+                        <!--            观测地点的布局-->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="47dp">
+
+                            <!--                观测时间icon-->
+                            <ImageView
+                                android:id="@+id/observation_time_image"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="16dp"
+                                android:src="@drawable/observation_time_icon"
+                                app:round="10dp" />
+
+                            <!--                    观测时间TextView-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="36dp"
+                                android:text="@string/observation_time"
+                                android:textColor="@color/RGB_77_77_77"
+                                android:textSize="14sp" />
+
+                            <!--                    具体观测时间TextView-->
+                            <TextView
+                                android:id="@+id/observation_time_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="105dp"
+                                android:text="@string/observation_time"
+                                android:textColor="@color/RGB_77_77_77"
+                                android:textSize="14sp"
+                                tools:text="2022.11.17 15:24" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="47dp">
+
+                            <!--                观测地点icon-->
+                            <ImageView
+                                android:id="@+id/observation_place_image"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="16dp"
+                                android:src="@drawable/observation_place_icon"
+                                app:round="10dp" />
+
+                            <!--                    观测地点TextView-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="36dp"
+                                android:text="@string/observation_place"
+                                android:textColor="@color/RGB_77_77_77"
+                                android:textSize="14sp" />
+
+                            <!--                    具体观测地点TextView-->
+                            <TextView
+                                android:id="@+id/observation_place_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="105dp"
+                                android:textColor="@color/RGB_77_77_77"
+                                android:textSize="14sp"
+                                tools:text="广东省XXXXXXXX" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:background="@color/RGB_240_240_240" />
+
+                        <!--    弹出的补充笔记的RelativeLayout-->
+                        <RelativeLayout
+                            android:id="@+id/supplement_title_relative"
+                            android:layout_width="match_parent"
+                            android:layout_height="236dp"
+                            android:visibility="invisible">
+
+                            <!--                    要补充的标题EditText-->
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/supplement_title_edit"
+                                android:layout_width="328dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="17dp"
+                                android:background="@color/white"
+                                android:ellipsize="end"
+                                android:hint="请输入标题"
+                                android:singleLine="true" />
+
+                            <!--           关闭补充笔记布局的icon-->
+                            <ImageView
+                                android:id="@+id/close_supplement_note_image"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="17dp"
+                                android:layout_marginEnd="16dp"
+                                android:src="@drawable/close_supplement_note" />
+
+                            <!--    添加笔记内容的CardView-->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="328dp"
+                                android:layout_height="74dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="51dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="5dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/RGB_76_219_154"
+                                app:strokeWidth="1dp">
+
+                                <!--    添加笔记内容的RelativeLayout-->
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <!--        添加的笔记内容EditText-->
+                                    <androidx.appcompat.widget.AppCompatEditText
+                                        android:id="@+id/supplement_content_edit"
+                                        android:layout_width="317dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="5dp"
+                                        android:background="@color/white"
+                                        android:hint="添加笔记内容"
+                                        android:inputType="textMultiLine"
+                                        android:lines="4"
+                                        android:minLines="1"
+                                        android:textColor="@color/RGB_204_204_204" />
+
+                                </RelativeLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!--           添加笔记图片的icon-->
+                            <ImageView
+                                android:scaleType="fitXY"
+                                android:id="@+id/add_image"
+                                android:layout_width="68dp"
+                                android:layout_height="68dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="142dp"
+                                android:src="@drawable/add_picture" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/RGB_240_240_240" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <!--    点击补充笔记的CardView-->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_below="@+id/below_linear"
+                        android:id="@+id/touch_to_supplement_card"
+                        android:layout_width="328dp"
+                        android:layout_height="46dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="9dp"
+                        android:visibility="invisible"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/RGB_76_219_154"
+                        app:strokeWidth="2dp">
+
+                        <!--    点击补充笔记的RelativeLayout-->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!--        点击补充笔记的TextView-->
+                            <TextView
+                                android:layout_width="17dp"
+                                android:layout_height="17dp"
+                                android:layout_marginStart="225dp"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/touch_to_supplement_note_icon" />
+
+                            <!--        点击补充笔记的TextView-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/touch_to_supplement_note"
+                                android:textColor="@color/RGB_76_219_154"
+                                android:textSize="17sp" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!--            "当前已处于编辑状态"icon-->
+            <ImageView
+                android:id="@+id/editable_state_image"
+                android:layout_width="212dp"
+                android:layout_height="42dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/editable_icon"
+                android:visibility="invisible" />
+
+<!--            &lt;!&ndash;    点击补充笔记的CardView&ndash;&gt;-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:id="@+id/touch_to_supplement_card"-->
+<!--                android:layout_width="328dp"-->
+<!--                android:layout_height="46dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginBottom="9dp"-->
+<!--                android:visibility="invisible"-->
+<!--                app:cardBackgroundColor="@color/white"-->
+<!--                app:cardCornerRadius="5dp"-->
+<!--                app:cardElevation="0dp"-->
+<!--                app:strokeColor="@color/RGB_76_219_154"-->
+<!--                app:strokeWidth="2dp">-->
+
+<!--                &lt;!&ndash;    点击补充笔记的RelativeLayout&ndash;&gt;-->
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent">-->
+
+<!--                    &lt;!&ndash;        点击补充笔记的TextView&ndash;&gt;-->
+<!--                    <TextView-->
+<!--                        android:layout_width="17dp"-->
+<!--                        android:layout_height="17dp"-->
+<!--                        android:layout_marginStart="225dp"-->
+<!--                        android:layout_marginTop="15dp"-->
+<!--                        android:src="@drawable/touch_to_supplement_note_icon" />-->
+
+<!--                    &lt;!&ndash;        点击补充笔记的TextView&ndash;&gt;-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:text="@string/touch_to_supplement_note"-->
+<!--                        android:textColor="@color/RGB_76_219_154"-->
+<!--                        android:textSize="17sp" />-->
+
+<!--                </RelativeLayout>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+            <!--    "保存笔记中"和"补充笔记中"的RelativeLayout-->
+            <RelativeLayout
+                android:layout_centerInParent="true"
+                android:id="@+id/save_and_supplement_note_relative"
+                android:layout_width="162dp"
+                android:layout_height="162dp"
+                android:visibility="invisible">
+                <!--    "保存笔记中"和"补充笔记中"的黑色框框背景-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/identifying_background" />
+                <!--    "保存笔记中"和"补充笔记中"的圆形识别进度条-->
+                <ProgressBar
+                    android:layout_width="61dp"
+                    android:layout_height="61dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="35dp"
+                    android:indeterminateTint="@color/white" />
+                <!--        "保存笔记中"和"补充笔记中"TextView-->
+                <TextView
+                    android:id="@+id/save_and_supplement_note_text"
+                    android:layout_width="93dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="118dp"
+                    android:text="保存笔记中"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+            <!--    返回键-->
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/back" />
+            <!--    "意见反馈"文字-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="14dp"
+                android:text="@string/feedback"
+                android:textColor="@color/RGB_0_0_0"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+        <!--    "意见反馈"和下面的RecyclerView的分割线-->
+        <View
+            android:layout_marginTop="54dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/RGB_204_204_204" />
+        <!--    代表意见反馈框的CardView-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/feed_back_card"
+            app:strokeColor="@color/RGB_76_219_154"
+            android:layout_width="328dp"
+            android:layout_height="226dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="107dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:strokeWidth="2dp"
+            app:cardElevation="0dp">
+
+            <!--    意见反馈框的RelativeLayout-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--        意见正文-->
+                <EditText
+                    android:id="@+id/feed_back_page_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:hint="提出您的宝贵意见吧~"
+                    android:maxLength="200"
+                    android:textColor="@color/RGB_204_204_204" />
+
+                <!--        意见的字数-->
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/feed_back_page_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0/200"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--    提交反馈CardView-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:layout_below="@+id/feed_back_card"
+            android:id="@+id/submit_feed_back_card_view"
+            android:layout_width="261dp"
+            android:layout_height="43dp"
+            app:cardBackgroundColor="@color/RGB_76_219_154"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/search_box_relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!--        提交反馈TextView-->
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit_feedback"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+</layout>

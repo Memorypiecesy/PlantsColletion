@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/save_and_supplement_note_relative"
+    android:layout_width="162dp"
+    android:layout_height="162dp"
+    android:background="@drawable/notice_dialog_round_corner"
+    android:layout_centerInParent="true">
+    <!--    "保存笔记中"和"补充笔记中"的圆形识别进度条-->
+    <ProgressBar
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:indeterminateTint="@color/white" />
+    <!--        "保存笔记中"和"补充笔记中"TextView-->
+    <TextView
+        android:id="@+id/notice_dialog_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="10dp"
+        android:text="XXX中"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</RelativeLayout>
+

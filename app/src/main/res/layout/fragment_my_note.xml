@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.RecogHisAndColActivity">
+
+        <View
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+
+
+        <!--    最上面的Relative-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+
+            <!--    "笔记"文字-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:text="@string/menu_note"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <!--    "管理"文字-->
+            <TextView
+                android:id="@+id/manage_and_cancel_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="25dp"
+                android:text="@string/management"
+                android:textColor="@color/RGB_76_219_154"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+
+        <!--    "搜索笔记"的根布局-->
+        <RelativeLayout
+            android:id="@+id/retrieve_by_door_root"
+            android:layout_width="match_parent"
+            android:layout_height="52dp">
+            <!--    搜索框-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/search_page_search_card_view"
+                android:layout_width="328dp"
+                android:layout_height="36dp"
+                android:foreground="@android:color/transparent"
+                android:layout_centerInParent="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/RGB_76_219_154"
+                app:strokeWidth="2dp">
+
+                <RelativeLayout
+                    android:id="@+id/search_box_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--    搜索框中的EditText-->
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/note_page_edit"
+                        android:layout_width="266dp"
+                        android:layout_height="21dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="40dp"
+                        android:background="@color/white"
+                        android:ellipsize="end"
+                        android:hint="搜索笔记标题/植物名称"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/RGB_153_153_153"
+                        android:textSize="16sp" />
+
+                    <!--    放大镜的图片-->
+                    <ImageView
+                        android:id="@+id/search_page_magnifying_lens"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="13dp"
+                        android:background="@drawable/magnifying_lens_gery" />
+                    <!--            "清空"图标-->
+                    <ImageView
+                        android:id="@+id/search_page_image_clear"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/search_page_clear"
+                        android:visibility="invisible" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_note_page_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/retrieve_by_door_root"
+            android:background="@color/RGB_245_245_245" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="RGB_51_51_51">#333333</color>
+    <color name="RGB_56_56_56">#383838</color>
+    <color name="RGB_26_26_26">#1a1a1a</color>
+    <color name="RGB_77_77_77">#1a1a1a</color>
+    <color name="RGB_0_0_0">#000000</color>
+    <color name="RGB_0_0_0_30_percent">#4D000000</color>
+    <color name="RGB_76_219_154">#4cdb9a</color>
+    <color name="RGB_76_219_154_20_percent">#4D4cdb9a</color>
+    <color name="RGB_166_166_166">#a6a6a6</color>
+    <color name="RGB_166_166_166_10_percent">#1Aa6a6a6</color>
+    <color name="RGB_255_159_64_10_percent">#1AFF9F40</color>
+    <color name="RGB_255_159_64_100_percent">#FFFF9F40</color>
+    <color name="RGB_0_209_181_10_percent">#1A00D1B5</color>
+    <color name="RGB_0_209_181_100_percent">#FF00D1B5</color>
+    <color name="RGB_245_245_245">#f5f5f5</color>
+    <color name="RGB_240_240_240">#F0F0F0</color>
+    <color name="RGB_229_229_229">#E5E5E5</color>
+    <color name="RGB_204_204_204">#CCCCCC</color>
+    <color name="RGB_128_128_128">#808080</color>
+    <color name="RGB_153_153_153">#999999</color>
+    <color name="RGB_56_168_118">#38a876</color>
+    <color name="RGB_255_102_102_100_percent">#FF6666</color>
+</resources>

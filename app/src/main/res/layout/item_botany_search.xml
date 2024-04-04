@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="BotanySearch"
+            type="com.example.plantscolllection.bean.Botanysearch" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:background="@color/RGB_245_245_245">
+
+
+        <View
+            android:id="@+id/time_relative"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/item_relative"
+            android:layout_width="328dp"
+            android:layout_height="114dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/delete_note_relative_round_corner">
+
+            <!--    右上角"物种类型"的CardView-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/species_card_view"
+                android:layout_width="66dp"
+                android:layout_height="21dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="11dp"
+                app:cardBackgroundColor="@color/RGB_76_219_154"
+                app:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <!--    "物种类型"TextView-->
+                    <TextView
+                        android:id="@+id/species_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        tool:text="珍稀物种" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--    花的图片-->
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/picture"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/about_us"
+                app:round="10dp" />
+            <!--        植物的中文名-->
+            <TextView
+                android:id="@+id/plants_chinese_name"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="114dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{BotanySearch.name}"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                tool:text="茉莉花" />
+
+            <!--        植物的英文名-->
+            <TextView
+                android:id="@+id/plants_latin_name"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/plants_chinese_name"
+                android:layout_marginStart="114dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{BotanySearch.latinName}"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tool:text="Jasminum sambac" />
+
+            <!--    植物"门"类的CardView-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="111dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@color/RGB_0_209_181_10_percent"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <!--    "植物的门类"TextView-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="@{BotanySearch.door}"
+                        android:textColor="@color/RGB_0_209_181_100_percent"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--    植物"科"类的CardView-->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="12dp"
+                android:layout_toEndOf="@+id/category"
+                android:backgroundTint="#1AFF9F40"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <!--    "植物的科类"TextView-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="@{BotanySearch.family}"
+                        android:textColor="@color/RGB_255_159_64_100_percent"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

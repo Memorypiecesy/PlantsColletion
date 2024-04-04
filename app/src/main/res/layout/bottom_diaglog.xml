@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@drawable/bottom_dialog_round_corner"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="466dp">
+
+    <!--    上面的绿色矩形-->
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bottom_dialog_green_rect" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/identification_result_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="336dp"
+        android:layout_marginTop="28dp">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <!--    "生成笔记"的CardView-->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_below="@+id/identification_result_view_pager"
+        android:layout_marginTop="25dp"
+        android:id="@+id/generate_note_card"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginBottom="37dp"
+        app:cardBackgroundColor="@color/RGB_0_209_181_100_percent"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp">
+
+        <!--    生成笔记的RelativeLayout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--        "生成笔记"TextView-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/generate_note"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--    "查看详情"的CardView-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/check_detail_card"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/identification_result_view_pager"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="37dp"
+        app:cardBackgroundColor="@color/RGB_76_219_154"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp">
+
+        <!--    查看详情的RelativeLayout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--        "查看详情"TextView-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/check_detail"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+
+    <RelativeLayout
+        android:id="@+id/text_expand_relative"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="39dp">
+
+        <View
+            android:background="@color/RGB_229_229_229"
+            android:id="@+id/divider_line"
+            tools:text="乒乓菊"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/text_expand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="1dp"
+            tools:text="乒乓菊" />
+
+    </RelativeLayout>
+</layout>

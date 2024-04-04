@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="User"
+            type="com.example.plantscolllection.bean.User" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        tools:context=".view.MeFragment">
+
+        <!--    绿色背景图-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="209dp"
+            android:src="@drawable/green_background" />
+
+        <!--    头像背景的圆圈-->
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/me_page_circle" />
+
+        <!--    头像-->
+
+        <!--    用户昵称-->
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:scaleType="fitXY"
+            android:id="@+id/me_page_avatar"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="102dp"
+            android:src="@drawable/qq_icon"
+            app:roundPercent="1" />
+
+        <TextView
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="111dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{User.name}"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            tools:text="热爱自然的小白" />
+
+        <!--    简介-->
+        <TextView
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="145dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{User.self}"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            tools:text="大自然的每个领域都是美妙绝伦的" />
+
+        <!--    白色圆角矩形Relative-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="560dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/me_fragment_round_corner">
+            <!--            笔记和识植物TextView的根布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                tools:context=".MainActivity">
+
+                <!--            笔记TextView的根布局-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tools:context=".MainActivity">
+
+                    <!--            笔记TextView的可点击范围-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="57dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="21dp">
+                        <!--                    笔记TextView-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/menu_note"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                        <!--                    笔记数目TextView-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="32dp"
+                            android:text="@{String.valueOf(User.noteVoCount)}"
+                            android:textColor="@color/black"
+                            android:textSize="21sp"
+                            tools:text="0" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!--            识植物TextView的根布局-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tools:context=".MainActivity">
+
+                    <!--            识植物TextView的可点击范围-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="57dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="21dp">
+                        <!--                    识植物TextView-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/recognize_plants"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                        <!--                    识植物数目的TextView-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="32dp"
+                            android:text="@{String.valueOf(User.botanyCount)}"
+                            android:textColor="@color/black"
+                            android:textSize="21sp"
+                            tools:text="0" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <!--    识别历史-->
+            <RelativeLayout
+                android:id="@+id/recognition_history_relative"
+                android:layout_width="60dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="139dp">
+
+                <ImageView
+                    android:layout_width="49dp"
+                    android:layout_height="49dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/recognition_history" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/recognition_history"
+                    android:textColor="@color/RGB_77_77_77"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <!--    我的收藏-->
+            <RelativeLayout
+                android:id="@+id/my_collection_relative"
+                android:layout_width="60dp"
+                android:layout_height="76dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="139dp">
+
+                <ImageView
+                    android:layout_width="49dp"
+                    android:layout_height="49dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/my_collection" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/my_collection"
+                    android:textColor="@color/RGB_77_77_77"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <!--    安全手册-->
+            <RelativeLayout
+                android:id="@+id/safety_manual_relative"
+                android:layout_width="60dp"
+                android:layout_height="76dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="139dp"
+                android:layout_marginEnd="32dp">
+
+                <ImageView
+                    android:layout_width="49dp"
+                    android:layout_height="49dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/safety_manual" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/safety_manual"
+                    android:textColor="@color/RGB_77_77_77"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <!--            更多功能TextView-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="264dp"
+                android:text="@string/more_function"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <!--            资料设置的根布局-->
+            <RelativeLayout
+                android:id="@+id/info_setting_relative"
+                android:layout_width="53dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="309dp">
+
+                <!--                    资料设置ImageView-->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/setting" />
+                <!--                    资料设置TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/info_setting"
+                    android:textColor="@color/RGB_77_77_77"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <!--            植物报错的根布局-->
+            <RelativeLayout
+                android:layout_width="53dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="113dp"
+                android:layout_marginTop="309dp">
+
+                <!--                    植物报错ImageView-->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/plants_error_report" />
+                <!--                    植物报错TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/plants_error_report"
+                    android:textColor="@color/RGB_77_77_77"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <!--            意见反馈的根布局-->
+            <RelativeLayout
+                android:id="@+id/feed_back_relative"
+                android:layout_width="53dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="202dp"
+                android:layout_marginTop="309dp">
+
+                <!--                    意见反馈ImageView-->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/feedback" />
+                <!--                    意见反馈TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/feedback"
+                    android:textColor="@color/RGB_77_77_77"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <!--            关于我们的根布局-->
+            <RelativeLayout
+                android:id="@+id/about_us_relative"
+                android:layout_width="53dp"
+                android:layout_height="59dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="309dp"
+                android:layout_marginEnd="32dp">
+
+                <!--                    关于我们ImageView-->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/about_us" />
+                <!--                    关于我们TextView-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/about_us"
+                    android:textColor="@color/RGB_77_77_77"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>
